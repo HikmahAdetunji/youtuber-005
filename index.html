@@ -6,6 +6,7 @@
 <title>Uthmaan Adetunji | YouTube Scriptwriter</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="work.css">
 </head>
 <body id="top">
 <!--Nav Section-->
@@ -72,8 +73,6 @@
     </div>
   </div>
 </a>
-      </a>
-        </span>
     <a href="index.html#contact" class="btn-secondary">Hire Me</a>
   </div>
   </div>
@@ -82,7 +81,7 @@
 
   <div class="hero-profile-container">
     <div class="bg-shape"></div>
-    <img src="uthmaan6.png" alt="Designer" class="hero-img">
+    <img src="images/uthmaan6.png" alt="Designer" class="hero-img">
 
     <div class="tag script">Script Writer</div>
 
@@ -96,7 +95,7 @@
 </div>
 
   </div>
-
+</section>
 <!--Services-->
 <section class="services" id="services">
   <div class="home-service">
@@ -135,10 +134,9 @@ Services
      </div>
       <h3>Long/Short-Form Scriptwriting</h3>
       <p>
-        High-retention YouTube scripts built with storytelling frameworks,
-        emotional pacing, and conversion psychology.
+        High-retention YouTube scripts built with storytelling frameworks, emotional pacing, and conversion psychology that keeps viewers watching and prompt them to subscribe.
       </p>
-      <a href="long-shortform.html" class="learn-more">Learn More<span>→</span></a>
+      <a href="long-shortform.html" class="learn-more">Learn More<span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
     </div>
 
 
@@ -151,8 +149,7 @@ Services
       </div>
       <h3>Hook Engineering</h3>
       <p>
-        Scroll-stopping intros designed to maximize watch time and
-        eliminate early drop-off.
+        Scroll-stopping intros designed to maximize watch time and eliminate early drop-off in the critical first 3–5 seconds of your video.
       </p>
       <a href="hookengineering.html" class="learn-more">Learn More<span>→</span></a>
     </div>
@@ -166,7 +163,7 @@ Services
       <h3>Clip Sourcing</h3>
 
       <p>
-        High-quality, royalty-free clips sourced and edited to match your script's tone and pacing.
+       High-quality clips sourced and curated to perfectly match your script's tone, pacing, and story.
         
       </p>
       <a href="clipsourcing.html" class="learn-more">Learn More<span>→</span></a>
@@ -232,15 +229,15 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
 
         <div class="stats">
           <div class="stat-item">
-            <h4>1000+</h4>
+            <h4 class="count" data-target="1000">0</h4>
             <p>Scripts Written</p>
             </div>
           <div class="stat-item">
-            <h4>200+</h4>
+            <h4 class="count" data-target="200">0</h4>
             <p>Creators Served</p>
           </div>
           <div class="stat-item">
-            <h4>4+</h4>
+            <h4 class="count" data-target="4">0</h4>
             <p>Years of Experience</p>
           </div>
         </div>
@@ -272,121 +269,103 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
    </div>
     </div>
 
-    <div class="projects-grid">
-
-      <!-- Project 1 -->
-      <div class="project-card reveal">
-        <div class="mockup-container">
-          <img src="https://picsum.photos/id/1015/600/380" alt="YouTube Script Sample" class="mockup">
+    <div class="work-index">
+    <div class="scroll-track-wrap reveal">
+    <div class="project-list" id="scrollTrack">
+    <article class="script-card" id="scriptCard"
+        data-niches="motivation finance"
+        data-title="The Right Way To Invest, The Warren Buffet Formula, Everyone Can Do This"
+        data-desc=" A documentary-style educational script structured to position the channel as financially credible and encourage long-term audience loyalty.">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=760&q=80" alt="Mountain fjord view"/>
+          <span class="card-duration">12-min video</span>
         </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span class="portfolio-tag">Scriptwriting</span>
-            <span class="portfolio-tag">YouTube</span>
-            <span class="portfolio-tag">Motivation</span>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="work-tag">Scriptwriting</span>
+            <span class="work-tag yt">YouTube</span>
+            <span class="work-tag">Finance</span>
           </div>
-          <h3 class="project-title">How I Built My First Million at 25 (Storytelling Script)</h3>
-          <p class="project-desc">
-            A high-engagement motivational script with strong hook, emotional storytelling, and powerful CTA. 
-            Delivered 1.2M+ views for a finance creator.
-          </p>
-          <div class="portfolio-check">
-       <div class="project-category">YouTube Script • 12-minute video</div>
-         <div class="project-readmore">
-        <a href="#">  →</a>
-         </div> 
-            </div>
+          <h3 class="card-title">The Right Way To Invest, The Warren Buffet Formula, Everyone Can Do This</h3>
+          <p class="card-desc"> A documentary-style educational script structured to position the channel as financially credible and encourage long-term audience loyalty.</p>
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card reveal">
-        <div class="mockup-container">
-          <img src="https://picsum.photos/id/201/600/380" alt="YouTube Script Sample" class="mockup">
+        <div class="card-footer">
+          <p class="card-meta">YouTube Script <span>• 12-minute video</span></p>
+          <div class="card-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <a href=" https://docs.google.com/document/d/1M3D33YZ6wyolLpUGLdE2-k6PoNHUfzqy8mmnyj9Y2NM/edit?usp=drivesdk" target="_blank" 
+     rel="noopener">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </a>
+            </svg></div>
         </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span class="portfolio-tag">Scriptwriting</span>
-            <span class="portfolio-tag">YouTube</span>
-            <span class="portfolio-tag">Tech Review</span>
+      </article>
+      <!-- Card 2 -->
+      <article class="script-card"  id="scriptCard"
+        data-niches="tech"
+        data-title="AI in Journalism: The Future of Reporting"
+        data-desc="High-retention script that builds tension progressively, connects history to future trends, uses real-world corporate example, and ends with CTA.">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=760&q=80" alt="Laptop and glasses on desk"/>
+          <span class="card-duration">15-min video</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="work-tag">Scriptwriting</span>
+            <span class="work-tag yt">YouTube</span>
+            <span class="work-tag">Tech</span>
           </div>
-          <h3 class="project-title">Why This New Gadget Will Change Your Life Forever</h3>
-          <p class="project-desc">
-            In-depth tech product review script with clear pros/cons, storytelling, and SEO-optimized structure. 
-            Helped the channel grow by 87k subscribers.
-          </p>
-          <div class="portfolio-check">
-
-          
-          <div class="project-category">YouTube Script • 15-minute video</div>
-          <div class="project-readmore">
-        <a href="#">  →</a>
-         </div> 
-         </div>
+          <h3 class="card-title">AI in Journalism: The Future of Reporting</h3>
+          <p class="card-desc">High-retention script that builds tension progressively, connects history to future trends, uses real-world corporate example, and ends with CTA.</p>
         </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card reveal">
-        <div class="mockup-container">
-          <img src="https://picsum.photos/id/237/600/380" alt="YouTube Script Sample" class="mockup">
+        <div class="card-footer">
+          <p class="card-meta">YouTube Script <span>• 15-minute video</span></p>
+          <div class="card-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <a href="
+            https://docs.google.com/document/d/1QIsEqmASEYWaJeW5eYCs7yxxhNVUkCSQ5501_OICDUs/edit?tab=t.0" target="_blank" 
+     rel="noopener">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></a></svg></div>
         </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span class="portfolio-tag">Scriptwriting</span>
-            <span class="portfolio-tag">YouTube</span>
-            <span class="portfolio-tag">Self Improvement</span>
+      </article>
+ 
+      <!-- Card 3 -->
+      <article class="script-card"  id="scriptCard"
+        data-niches="crime documentary"
+        data-title="Micheal Scott Moore Kidnapping"
+        data-desc="This is a prestige true-crime documentary that combines real geopolitical tension, human psychology, and moral ambiguity.">
+        <div class="card-thumb">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=760&q=80" alt="Code on screen"/>
+          <span class="card-duration">10-min video</span>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="work-tag">Scriptwriting</span>
+            <span class="work-tag yt">YouTube</span>
+            <span class="work-tag">Documentary</span>
           </div>
-          <h3 class="project-title">The 7 Habits That Changed My Life in 2025</h3>
-          <p class="project-desc">
-            Personal development script with actionable steps, real-life examples, and strong viewer retention techniques.
-          </p>
-          <div class="portfolio-check">
-
-      
-          <div class="project-category">YouTube Script • 18-minute video</div>
-          <div class="project-readmore">
-        <a href="#">  →</a>
-         </div> 
-         </div>
+          <h3 class="card-title">Micheal Scott Moore Kidnapping</h3>
+          <p class="card-desc">This is a prestige true-crime documentary that combines real geopolitical tension, human psychology, and moral ambiguity.</p>
         </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card reveal">
-        <div class="mockup-container">
-          <img src="https://picsum.photos/id/870/600/380" alt="YouTube Script Sample" class="mockup">
+        <div class="card-footer">
+          <p class="card-meta">YouTube Script <span>• 10-minute video</span></p>
+          <div class="card-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <a href="
+            https://docs.google.com/document/d/1QIsEqmASEYWaJeW5eYCs7yxxhNVUkCSQ5501_OICDUs/edit?tab=t.0" target="_blank" rel="noopener">
+             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></a></svg></div>
         </div>
-        <div class="project-info">
-          <div class="project-tags">
-            <span class="portfolio-tag">Scriptwriting</span>
-            <span class="portfolio-tag">YouTube</span>
-            <span class="portfolio-tag">Finance</span>
-          </div>
-          <h3 class="project-title">How to Make Your First $10,000 Online (Step-by-Step)</h3>
-          <p class="project-desc">
-            High-conversion side hustle script with clear value delivery and multiple CTAs. 
-            One of my most successful scripts to date.
-          </p>
-          <div class="portfolio-check">
+      </article>
+</div>
+</div>
+</div>
+</section>
 
-          
-          <div class="project-category">YouTube Script • 14-minute video</div>
-          <div class="project-readmore">
-        <a href="#">  →</a>
-         </div> 
-         </div>
-        </div>
-      </div>
 
-    </div>
-  </section>
+    
 <!--Testimonials-->
  
 <section class="testimonials-section reveal" id="testimonials">
   <div class="section-label">Clients Testimonials</div>
   <h2 class="section-title">The Impact of My Work:</h2>
-  <p class="section-title-italic">Client Testimonials</p>
+  <p class="section-title-italic">2Cents From My Clients</p>
  
   <div class="carousel-wrapper">
     <div class="carousel-track" id="track"></div>
@@ -415,7 +394,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
     <!-- Left Side - Contact Info -->
     <div class="contact-info reveal">
       <p class="contact-label">Contact Me</p>
-      <h2>Let’s Talk for <span class="contact-highlight">Your Next Projects</span></h2>
+      <h2>Let’s Talk about <span class="contact-highlight">Your Next Projects</span></h2>
       <p class="contact-description">
         Have a project in mind? Whether you need high-retention scripts, outline for your scripts, clip sourcing, or strategic content idea, I’m available.
       </p>
@@ -515,6 +494,15 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
     </div>
   </div>
 </section>
+
+<!--Custom Alert-->
+<div class="alert-backdrop" id="alertBackdrop"></div>
+<div class="alert-box" id="customAlert">
+  <h3 id="alertTitle">Uthmaan Adetunji</h3>
+    <p id="alertMessage"></p>
+    <button type="button" onclick="closeAlert()">Ok</button>
+  </div>
+
 <!--FAQ-->
 <section class="faq-section">
   <div class="faq-header reveal">
@@ -579,7 +567,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
     </div>
 
     <!-- FAQ Item 6 -->
-    <div class="faq-item">
+    <div class="faq-item faq-item6">
       <div class="faq-question">
         <span>Can I request revisions after delivery?</span>
         <span class="faq-icon">+</span>
@@ -600,8 +588,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
         Uthmaan.
       </div>
       <p class="footer-desc">
-        Since 2022, I've written 1,000+ YouTube scripts for 200+ creators across 
-        every niche, tripling their channels' average views and increasing retention.
+        The Go-To Scriptwriter For High-performing Content.
       </p>
       <div class="footer-socials">
         <a href="#" class="social-icon">
@@ -652,7 +639,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
 
   <div class="footer-bottom">
     <p>Copyright © 2026 <span>Uthmaan Adetunji.</span> All Rights Reserved.</p>
-    
+
   </div>
 </footer>
 <script src="script.js">

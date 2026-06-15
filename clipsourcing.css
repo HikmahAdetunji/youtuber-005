@@ -212,7 +212,8 @@ hr.divider{
     .page-body{
         padding:60px 28px;
     }
-    h2{font-size: 22px;
+    h2{
+        font-size: 22px;
     }
     .lead-text{
         font-size:14px;

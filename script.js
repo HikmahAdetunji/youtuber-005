@@ -1,5 +1,21 @@
-
-   document.addEventListener('DOMContentLoaded', function () {
+//Custom Alert
+  function showAlert(title, message) {
+    document.getElementById('alertTitle').textContent = title;
+ document.getElementById('alertMessage').textContent = message;
+    document.getElementById('customAlert').style.display = 'block';
+ document.getElementById('alertBackdrop').style.display = 'block';
+  document.getElementById('contactForm').style.display = 'none';
+ 
+  }
+  function closeAlert() {
+     document.getElementById('customAlert').style.display = 'none';
+  document.getElementById('alertBackdrop').style.display = 'none';
+  document.getElementById('contactForm').style.display = 'flex';
+}
+ 
+ 
+ 
+ document.addEventListener('DOMContentLoaded', function () {
   
   
     /*Hamburger*/
@@ -19,6 +35,78 @@
     });
   }
 
+  //Stats Count
+  function animateCounters(){
+    const counters=document.querySelectorAll('.count');
+
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      const increment = target / (duration / 16);
+      let current =0;
+      const timer = setInterval(() => {
+        current += increment;
+
+        if (current >= target){
+          counter.textContent = target + (target === 4 ? '' : '+');
+          clearInterval(timer);
+        } else{
+          counter.textContent = Math.floor(current) + (target === 4 ? '' : '+');
+        }
+      
+      }, 16);
+    });
+  }
+window.addEventListener('load', () => {
+  const statsSection = document.querySelector('.stats');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect(); // Run only once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(statsSection);
+});
+
+/* Home page project cards auto-scroll */
+(function () {
+  const track = document.getElementById('scrollTrack');
+  if (!track) return;
+
+  const cards = Array.from(track.querySelectorAll('.script-card'));
+  if (cards.length < 2) return;
+
+  let isPaused = false;
+  let resumeTimer = null;
+   let currentIdx = 0;
+
+  function pauseFor(ms) {
+    isPaused = true;
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => { isPaused = false; }, ms);
+  }
+
+  function scrollToIndex(idx) {
+    const card = cards[idx];
+    const trackCenter = track.offsetWidth / 2;
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    track.scrollTo({
+      left: cardCenter - trackCenter,
+      behavior: 'smooth'
+    });
+  }
+
+  setInterval(() => {
+    if (isPaused) return;
+     currentIdx = currentIdx >= cards.length - 1 ? 0 : currentIdx + 1;
+    scrollToIndex(currentIdx);
+  }, 4000);
+  track.addEventListener('touchstart', () => pauseFor(4000), { passive: true });
+})();
 
 /*Testimonials Carousel */
 
@@ -140,7 +228,7 @@ const faqItems = document.querySelectorAll('.faq-item');
     });
 
     if (!isValid) {
-      alert("Please fill in all required fields.");
+      showAlert("Missing Information", "Please fill in all required fields.");
       return;
     }
     const originalHTML = submitBtn.innerHTML;
@@ -152,7 +240,7 @@ const faqItems = document.querySelectorAll('.faq-item');
     `;
     submitBtn.disabled = true;
     setTimeout(() => {
-      alert("✅ Thank you! Your message has been sent successfully.\n\nWe'll get back to you soon about your YouTube script project.");
+      showAlert("Message Sent!", "Thank you for reaching out. Your project inquiry has been received, and I'll respond shortly.");
       form.reset();
       submitBtn.classList.remove('sending');
       submitBtn.innerHTML = originalHTML;
@@ -160,6 +248,8 @@ const faqItems = document.querySelectorAll('.faq-item');
     }, 1500);
   });
   }
+
+  
 
   //Data Reveal Animation
   const revealElements = document.querySelectorAll('.reveal');
@@ -349,4 +439,48 @@ revealElements.forEach(el => observer.observe(el));
  
     /* ── Init: wait one frame so layout is painted before measuring ── */
     requestAnimationFrame(() => applyFilter());
+
+    //Auto-scroll
+let autoScrollInterval = null;
+let isPaused = false;
+function startAutoScroll() {
+  stopAutoScroll();
+  autoScrollInterval = setInterval(() => {
+    if (isPaused) return;
+    const visible = getVisible();
+    if (!visible.length) return;
+
+    const currentIdx = activeIndex(visible);
+    const nextIdx = currentIdx >= visible.length - 1 ? 0 : currentIdx + 1;
+    const targetCard = visible[nextIdx];
+
+trackProject.scrollTo({
+      left: targetCard.offsetLeft - 60,
+      behavior: 'smooth'
+    });
+  }, 2000);
+}
+function stopAutoScroll() {
+  if (autoScrollInterval) {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = null;
+  }
+}
+trackProject.addEventListener('mouseenter', () => { isPaused = true; });
+trackProject.addEventListener('mouseleave', () => { isPaused = false; });
+trackProject.addEventListener('touchstart', () => {
+  isPaused = true;
+  clearTimeout(trackProject._resumeTimer);
+  trackProject._resumeTimer = setTimeout(() => { isPaused = false; }, 4000);
+}, { passive: true });
+
+[leftBtn, rightBtn].forEach(btn => {
+  btn.addEventListener('click', () => {
+    isPaused = true;
+    clearTimeout(trackProject._resumeTimer);
+    trackProject._resumeTimer = setTimeout(() => { isPaused = false; }, 4000);
+  });
+});
+
+startAutoScroll();
 });
