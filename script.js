@@ -72,25 +72,50 @@ window.addEventListener('load', () => {
   observer.observe(statsSection);
 });
 
-/* Home page project cards auto-scroll */
+//Home Card Scroll & Nav
+
 (function () {
-  const track = document.getElementById('scrollTrack');
+  const track = document.getElementById('homeTrack');
   if (!track) return;
 
-  const cards = Array.from(track.querySelectorAll('.script-card'));
+  const cards = Array.from(track.querySelectorAll('.home-card'));
   if (cards.length < 2) return;
+
+  const leftBtn = document.getElementById('cardLbtn');
+  const rightBtn = document.getElementById('cardRbtn');
+  const signsContainer = document.getElementById('signs');
 
   let isPaused = false;
   let resumeTimer = null;
-   let currentIdx = 0;
-
+  let currentIdx = 0;
+  let intervalId = null;
+cards.forEach((_, i) => {
+    const sign = document.createElement('button');
+    sign.className = 'scroll-signs';
+    sign.setAttribute('aria-label', `Go to card ${i + 1}`);
+    if (i === 0) sign.classList.add('active');
+    sign.addEventListener('click', () => {
+      currentIdx = i;
+      scrollToIndex(currentIdx);
+      pauseFor(6000);
+    });
+    signsContainer.appendChild(sign);
+  });
   function pauseFor(ms) {
     isPaused = true;
     clearTimeout(resumeTimer);
     resumeTimer = setTimeout(() => { isPaused = false; }, ms);
   }
 
-  function scrollToIndex(idx) {
+  function updateNav() {
+    leftBtn.disabled = currentIdx === 0;
+    rightBtn.disabled = currentIdx === cards.length - 1;
+    signsContainer.querySelectorAll('.scroll-signs').forEach((sign, i) => {
+      sign.classList.toggle('active', i === currentIdx);
+    });
+  }
+
+function scrollToIndex(idx) {
     const card = cards[idx];
     const trackCenter = track.offsetWidth / 2;
     const cardCenter = card.offsetLeft + card.offsetWidth / 2;
@@ -98,15 +123,61 @@ window.addEventListener('load', () => {
       left: cardCenter - trackCenter,
       behavior: 'smooth'
     });
+    updateNav();
+  }
+   function startAutoScroll() {
+    if (intervalId) return;
+    intervalId = setInterval(() => {
+      if (isPaused) return;
+      currentIdx = currentIdx >= cards.length - 1 ? 0 : currentIdx + 1;
+      scrollToIndex(currentIdx);
+    }, 4000);
+  }
+ function stopAutoScroll() {
+    clearInterval(intervalId);
+    intervalId = null;
   }
 
-  setInterval(() => {
-    if (isPaused) return;
-     currentIdx = currentIdx >= cards.length - 1 ? 0 : currentIdx + 1;
-    scrollToIndex(currentIdx);
-  }, 4000);
+  // --- Button clicks ---
+  leftBtn.addEventListener('click', () => {
+    if (currentIdx > 0) {
+      currentIdx--;
+      scrollToIndex(currentIdx);
+      pauseFor(6000);
+    }
+  });
+  rightBtn.addEventListener('click', () => {
+    if (currentIdx < cards.length - 1) {
+      currentIdx++;
+      scrollToIndex(currentIdx);
+      pauseFor(6000);
+    }
+  });
+
+  // --- IntersectionObserver ---
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startAutoScroll();
+        } else {
+          stopAutoScroll();
+          isPaused = false;
+        }
+      });
+   },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(track);
+
   track.addEventListener('touchstart', () => pauseFor(4000), { passive: true });
-})();
+
+  // --- Init ---
+  updateNav();
+})(); 
+
+  
 
 /*Testimonials Carousel */
 
@@ -321,7 +392,7 @@ revealElements.forEach(el => observer.observe(el));
     let activeNiche = 'all';
     let searchQuery = '';
  
-    /* ── Filter logic ── */
+    /*Filter logic */
     function getVisible() {
       return allCards.filter(c => {
         const niches  = c.dataset.niches || '';
@@ -370,7 +441,7 @@ revealElements.forEach(el => observer.observe(el));
  
     function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
  
-    /* ── Dots: rebuild whenever visible set changes ── */
+    /*Dots: rebuild whenever visible set changes*/
     function rebuildDots(visible) {
       dotsWrap.innerHTML = '';
       visible.forEach((_, i) => {
@@ -381,7 +452,7 @@ revealElements.forEach(el => observer.observe(el));
       syncNav(visible, 0);
     }
  
-    /* ── Sync dot highlight + button disabled state ── */
+    /*Sync dot highlight + button disabled state*/
     function syncNav(visible, idx) {
       const dotEls = dotsWrap.querySelectorAll('.dot');
       dotEls.forEach((d, i) => d.classList.toggle('active', i === idx));
@@ -389,7 +460,7 @@ revealElements.forEach(el => observer.observe(el));
       rightBtn.disabled = visible.length === 0 || idx >= visible.length - 1;
     }
  
-    /* ── Which visible-card index is closest to the left edge of the track? ── */
+    /*Which visible-card index is closest to the left edge of the track?*/
     function activeIndex(visible) {
       if (!visible.length) return 0;
       const trackLeft  = trackProject.getBoundingClientRect().left;
@@ -397,20 +468,19 @@ revealElements.forEach(el => observer.observe(el));
       let best = 0, bestDist = Infinity;
       visible.forEach((card, i) => {
         const dist = Math.abs(card.offsetLeft - scrollLeft - trackLeft + trackProject.getBoundingClientRect().left);
-        // simpler: distance of card left edge from track scroll position
         const d2 = Math.abs(card.offsetLeft - trackProject.offsetLeft - scrollLeft);
         if (d2 < bestDist) { bestDist = d2; best = i; }
       });
       return best;
     }
  
-    /* ── Called on every scroll event ── */
+    // Called on every scroll event
     function onScroll() {
       const visible = getVisible();
       syncNav(visible, activeIndex(visible));
     }
  
-    /* ── Pill clicks ── */
+    /*Pill clicks*/
     pillsWrap.addEventListener('click', e => {
       const pill = e.target.closest('.pill');
       if (!pill) return;
@@ -419,7 +489,7 @@ revealElements.forEach(el => observer.observe(el));
       applyFilter();
     });
  
-    /* ── Search input ── */
+    /*Search input*/
     searchInput.addEventListener('input', () => {
       searchQuery = searchInput.value.trim();
       searchClear.classList.toggle('visible', searchQuery.length > 0);
@@ -434,7 +504,7 @@ revealElements.forEach(el => observer.observe(el));
       applyFilter();
     });
  
-    /* ── Nav buttons: scroll by one visible card's width ── */
+    /*Nav buttons: scroll by one visible card's width*/
     function cardStepWidth() {
       const visible = getVisible();
       if (!visible.length) return 404;
@@ -449,9 +519,7 @@ revealElements.forEach(el => observer.observe(el));
     });
  
     trackProject.addEventListener('scroll', onScroll, { passive: true });
- 
-    /* ── Init: wait one frame so layout is painted before measuring ── */
-    requestAnimationFrame(() => applyFilter());
+requestAnimationFrame(() => applyFilter());
 
     //Auto-scroll
 let autoScrollInterval = null;

@@ -53,9 +53,9 @@
   <!-- Hero Section -->
 <section class="hero">
 
-  <div class="hero-body reveal">
+  <div class="hero-body">
 
-<div class="hero-greeting">
+<div class="hero-greeting reveal">
   
   <div class="hello-badge">Hello There!</div>
   <h1>I'm <em class="hero-name">Uthmaan Adetunji,</em> YouTube’s Go-To Scriptwriter for High-Performance Content</h1>
@@ -77,7 +77,7 @@
   </div>
   </div>
 
-<div class="hero-profile">
+<div class="hero-profile reveal">
 
   <div class="hero-profile-container">
     <div class="bg-shape"></div>
@@ -100,16 +100,16 @@
 <section class="services" id="services">
   <div class="home-service">
   <div class="service-left">
-    <p class="services-label">
+    <p class="services-label reveal">
       Services
     </p>
-<h2 class="service-title">
+<h2 class="service-title reveal">
   <span>
 Services
   </span> I Provide
 </h2>
   </div>
-<div class="service-button">
+<div class="service-button reveal">
   <a class="pill-btn" href="services.html">
   <div class="text-area">View All Services</div>
   <div class="icon-outer">
@@ -177,7 +177,7 @@ Services
 
 <section class="about-home" id="about">
   <div class="about-home-container">
-    <div class="about-home-leftside">
+    <div class="about-home-leftside reveal">
      <div class="circle-graphic">
           <!-- Decorative icons -->
           <div class="decor-icon icon1">🎬</div>
@@ -227,7 +227,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
     
 </p>
 
-        <div class="stats">
+        <div class="stats reveal">
           <div class="stat-item">
             <h4 class="count" data-target="1000">0</h4>
             <p>Scripts Written</p>
@@ -270,9 +270,10 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
     </div>
 
     <div class="work-index">
-    <div class="scroll-track-wrap reveal">
-    <div class="project-list" id="scrollTrack">
-    <article class="script-card" id="scriptCard"
+     
+    <div class="scroll-track-wrap">
+    <div class="project-list" id="homeTrack">
+    <article class="home-card reveal" id="scriptCard"
         data-niches="motivation finance"
         data-title="The Right Way To Invest, The Warren Buffet Formula, Everyone Can Do This"
         data-desc=" A documentary-style educational script structured to position the channel as financially credible and encourage long-term audience loyalty.">
@@ -300,7 +301,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
         </div>
       </article>
       <!-- Card 2 -->
-      <article class="script-card"  id="scriptCard"
+      <article class="home-card reveal"  id="scriptCard"
         data-niches="tech"
         data-title="AI in Journalism: The Future of Reporting"
         data-desc="High-retention script that builds tension progressively, connects history to future trends, uses real-world corporate example, and ends with CTA.">
@@ -328,7 +329,7 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
       </article>
  
       <!-- Card 3 -->
-      <article class="script-card"  id="scriptCard"
+      <article class="home-card reveal"  id="scriptCard"
         data-niches="crime documentary"
         data-title="Micheal Scott Moore Kidnapping"
         data-desc="This is a prestige true-crime documentary that combines real geopolitical tension, human psychology, and moral ambiguity.">
@@ -354,8 +355,19 @@ Whether you’re running a faceless channel, a YouTube automation brand, or a pe
         </div>
       </article>
 </div>
+  
 </div>
 </div>
+
+<div class="scroll-dir">
+    <button class="scroll-dirbtn" id="cardLbtn" aria-label="Scroll left" disabled>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="scroll-dirbtn" id="cardRbtn" aria-label="Scroll right">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="scroll-signs" id="signs"></div>
+  </div>
 </section>
 
 
