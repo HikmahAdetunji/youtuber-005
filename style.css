@@ -19,6 +19,7 @@
 }
 html{
   scroll-behavior:smooth;
+  max-width:100%;
 }
 body {
   background: var(--bg);
@@ -45,7 +46,7 @@ body {
   position:sticky;
   height:68px;
   border-radius:0 0 18px 18px;
-  
+
 }
 
 .logo {
@@ -182,25 +183,14 @@ body {
 .mobile-nav ul li a:hover { 
     color: var(--accent-light); 
 }
-.mobile-nav .mobile-cta {
-  display: block;
-  margin: 16px 28px 0;
-  padding: 12px;
-  background: var(--accent);
-  color: #fff;
-  text-align: center;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none;
-}
  
 /*HERO Left*/
 .hero {
   padding-top:80px;
   max-width:1300px;
   margin: 0 auto;
-  padding-left: 64px;
-  padding-right: 32px;
+  padding-left: 48px;
+  padding-right: 48px;
 }
 .hero-body{
 display:grid;
@@ -426,8 +416,8 @@ margin:0 auto;
 background:var(--bg);
 box-shadow: 0 -8px 12px -6px rgba(0, 0, 0, 0.12);
 padding-top:80px;
-padding-left: 64px;
-padding-right: 32px;
+padding-left: 48px;
+padding-right: 48px;
 max-width:1300px;
 }
 
@@ -565,8 +555,8 @@ max-width:1300px;
   background-color:var(--teal);
   color:white;
   padding-top:80px;
-  padding-left:64px;
-  padding-right:32px;
+  padding-left:48px;
+  padding-right:48px;
   min-height:500px;
   max-width:1300px;
   margin:0 auto;
@@ -709,8 +699,8 @@ max-width:1300px;
 
 .portfolio-section {
       padding-top:80px;
-      padding-left:64px;
-      padding-right:32px;
+      padding-left:48px;
+      padding-right:48px;
       max-width: 1300px;
       margin:0 auto;
       position:relative;
@@ -791,9 +781,8 @@ max-width:1300px;
 .testimonials-section {
       background: #f0ede8;
       padding-top:80px;
-      padding-right:32px;
-      padding-left:64px;
-      margin:0 auto;
+      padding-right:48px;
+      padding-left:48px;
       text-align: center;
       overflow: hidden;
       max-width:1300px;
@@ -837,7 +826,7 @@ max-width:1300px;
  
     .carousel-wrapper {
       position: relative;
-      width: 100%;
+      width:100%;
       overflow: hidden;
     }
  
@@ -960,8 +949,8 @@ max-width:1300px;
 
    .contact-section {
     padding-top:80px;
-    padding-left:64px;
-    padding-right:32px;
+    padding-left:48px;
+    padding-right:48px;
     background: #ffffff;
     margin:0 auto;
     position:relative;
@@ -1182,8 +1171,8 @@ max-width:1300px;
     background: var(--teal);
     color: white;
     padding-top: 80px;
-    padding-left:64px;
-    padding-right:32px;
+    padding-left:48px;
+    padding-right:48px;
   margin-bottom:0 auto;
   padding-bottom:60px;
   max-width:1300px;
@@ -1268,8 +1257,8 @@ max-width:1300px;
   .footer {
   background: #fff;
   padding-top:80px;
-  padding-right:32px;
-  padding-left:64px;
+  padding-right:48px;
+  padding-left:48px;
   margin:0 auto;
   max-width:1300px;
   font-family: 'DM Sans', sans-serif;
@@ -1384,9 +1373,8 @@ max-width:1300px;
 
 .footer-bottom {
   background:var(--teal);
-margin-right:-80px;
-margin-left:-80px;
-  padding: 20px 80px;
+  margin: 0 -64px -80px -64px;
+  padding: 20px 64px;
   text-align:center;
 }
 
@@ -1419,12 +1407,16 @@ margin-left:-80px;
 @media(max-width: 1024px){
 .navbar{
     padding:0 24px;
+    
 }
 .logo{
     padding-left:0;
 }
 .btn-contact{
     margin-right:0;
+}
+.mobile-cta{
+  display:none;
 }
 .hero{
     padding-left: 32px; 
@@ -1445,28 +1437,14 @@ margin-left:-80px;
   .bg-shape { 
     width: 300px; 
     top: 260px; 
-    left: 30px; 
+    left: 70px; 
 }
   .tag.script { 
-    right: 20px; 
-    top: 240px; 
-}
-.services { 
-    margin-left: -32px; 
-    margin-right: -32px; 
-}
-  .services-catalogue { 
-    margin-left: 32px; 
-    margin-right: 32px; 
+    right: 50px; 
+    top: 260px; 
 }
   .home-service {
      padding: 0 32px;
-}
-
-
-  .about-home { 
-    margin-left: -32px; 
-    margin-right: -32px; 
 }
   .about-home-container { 
     gap: 40px; 
@@ -1482,10 +1460,6 @@ margin-left:-80px;
     font-size: 32px;
  }
 
- .portfolio-section { 
-    margin-left: -32px; 
-    margin-right: -32px; 
-}
   .portfolio-header { 
     padding: 0 32px; 
 }
@@ -1494,8 +1468,7 @@ margin-left:-80px;
     margin-right: 32px; 
 }
 .testimonials-section { 
-    margin-left: -32px; 
-    margin-right: -32px; 
+  
     padding: 80px 24px; 
 }
   .card.center { 
@@ -1505,21 +1478,12 @@ margin-left:-80px;
     width: 300px; 
 }
 
-  .contact-section { 
-    margin-left: -32px; 
-    margin-right: -32px; 
-}
   .contact-container { 
     padding: 0 32px; 
     gap: 40px; 
 }
   .contact-info h2 { 
     font-size: 30px; 
-}
-
-  .faq-section { 
-    margin-left: -32px; 
-    margin-right: -32px; 
 }
 
   .footer { 
@@ -1530,13 +1494,13 @@ margin-left:-80px;
     gap: 40px; 
 }
 .footer-bottom{
-  margin: 0 -160px -60px;
+  margin: 0 -40px -60px;
 }
   
 }
 
 /*MOBILE*/
-@media(max-width:768px){
+@media(max-width:900px){
     /* NAV */
   .navbar { 
     padding: 0 16px; 
@@ -1565,17 +1529,42 @@ margin-left:-80px;
 
   /* HERO */
   .hero { 
-    padding: 40px 20px 20px; 
+    padding: 70px 20px 20px; 
 }
   .hero-body {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
+   .hero-img { 
+    width: 100%; 
+    height: auto; 
+}
+  .bg-shape { 
+    width: 350px; 
+    height: 250px; 
+    top: 150px; 
+    left: 50%; 
+    transform: translateX(-50%);
+ }
+  .tag.script  {
+     font-size: 11px; 
+     padding: 6px 10px;
+    right: 220px; 
+    top: 180px; 
+}
+  .tag.outline {
+     left: 200px; 
+    bottom: 60px; 
+     font-size: 11px; 
+     padding: 6px 10px;
+     }
   .hero h1 { 
     font-size: 28px; 
 }
   .hello-badge { 
     font-size: 0.85rem;
+    margin-top:30px;
  }
   .hero-description {
      font-size: 0.95rem; 
@@ -1590,29 +1579,6 @@ margin-left:-80px;
     margin-top: 0;
     order: -1;
   }
-  .hero-img { 
-    width: 220px; 
-    height: 300px; 
-}
-  .bg-shape { 
-    width: 220px; 
-    height: 160px; 
-    top: 200px; 
-    left: 50%; 
-    transform: translateX(-50%);
- }
-  .tag.script  { 
-    right: 10px; 
-    top: 180px; 
-    font-size: 13px; 
-    padding: 8px 14px; 
-}
-  .tag.outline { 
-    left: 10px; 
-    bottom: 60px; 
-    font-size: 13px; 
-    padding: 8px 14px; 
-}
 
   /* SERVICES */
   .services { 
@@ -1647,18 +1613,18 @@ margin-left:-80px;
     margin-bottom: 160px; 
 }
   .circle-graphic { 
-    width: 200px; 
-    height: 200px; 
+    width: 300px; 
+    height: 300px; 
 }
   .monogram { 
     font-size: 70px; 
 }
-  .tag1 { bottom: -30px;  left: 0; font-size: 11px; padding: 6px 12px; }
-  .tag2 { bottom: -30px;  right: 0; font-size: 11px; padding: 6px 12px; }
-  .tag3 { bottom: -65px;  left: 0; font-size: 11px; padding: 6px 12px; }
-  .tag4 { bottom: -65px;  right: 0; font-size: 11px; padding: 6px 12px; }
-  .tag5 { bottom: -100px; left: 0; font-size: 11px; padding: 6px 12px; }
-  .tag6 { bottom: -100px; right: 0; font-size: 11px; padding: 6px 12px; }
+  .tag1 { bottom: -30px;  left: 200px; font-size: 11px; padding: 6px 12px; }
+  .tag2 { bottom: -30px;  right: 200px; font-size: 11px; padding: 6px 12px; }
+  .tag3 { bottom: -65px;  left: 210px; font-size: 11px; padding: 6px 12px; }
+  .tag4 { bottom: -65px;  right: 210px; font-size: 11px; padding: 6px 12px; }
+  .tag5 { bottom: -100px; left: 200px; font-size: 11px; padding: 6px 12px; }
+  .tag6 { bottom: -100px; right: 200px; font-size: 11px; padding: 6px 12px; }
   .tag7 { bottom: -135px; left: 50%; transform: translateX(-50%); font-size: 11px; padding: 6px 12px; }
 
   .right-side h2 { 
@@ -1666,6 +1632,7 @@ margin-left:-80px;
 }
   .right-side p  { 
     font-size: 15px; 
+    max-width:800px;
 }
   .stats { 
     gap: 24px; 
@@ -1692,12 +1659,11 @@ margin-left:-80px;
 
    #scriptCard { 
       flex: 0 0 300px;
+      max-width:400px;
       }
 
   /* TESTIMONIALS */
   .testimonials-section { 
-    margin-left: -20px; 
-    margin-right: -20px; 
     padding: 60px 16px; 
 }
   .section-title        { 
@@ -1766,8 +1732,37 @@ margin-left:-80px;
   }
 }
 
+@media(max-width:768px){
+
+
+.tag.script  {
+    font-size: 11px; 
+    padding: 6px 10px;
+    right: 120px; 
+    top: 180px; 
+}
+  .tag.outline {
+    left: 120px; 
+    bottom: 60px; 
+    font-size: 11px; 
+    padding: 6px 10px;
+     }
+
+  .tag1 { bottom: -30px;  left: 150px; font-size: 11px; padding: 6px 12px; }
+  .tag2 { bottom: -30px;  right: 150px; font-size: 11px; padding: 6px 12px; }
+  .tag3 { bottom: -65px;  left: 160px; font-size: 11px; padding: 6px 12px; }
+  .tag4 { bottom: -65px;  right: 160px; font-size: 11px; padding: 6px 12px; }
+  .tag5 { bottom: -100px; left: 150px; font-size: 11px; padding: 6px 12px; }
+  .tag6 { bottom: -100px; right: 150px; font-size: 11px; padding: 6px 12px; }
+  .tag7 { bottom: -135px; left: 50%; transform: translateX(-50%); font-size: 11px; padding: 6px 12px; }
+
+}
+
 /*SMALL MOBILE SCREEN*/
 @media (max-width: 480px) {
+  .navbar{
+    padding:0 10px;
+  }
     .hero{
         padding-top:0;
     }
@@ -1789,10 +1784,14 @@ margin-left:-80px;
   .tag.script  {
      font-size: 11px; 
      padding: 6px 10px;
+     right:70px;
+     top:200px;
      }
   .tag.outline {
      font-size: 11px; 
      padding: 6px 10px;
+     left:80px;
+     bottom:10px;
      }
 
   .pill-btn .text-area {
@@ -1807,13 +1806,27 @@ margin-left:-80px;
     width: 28px; 
     height: 28px;
    }
-
+/*About*/
   .right-side h2 {
      font-size: 22px; 
     }
   .stat-item h4 { 
     font-size: 24px; 
   }
+.circle-graphic { 
+    width: 200px; 
+    height: 200px; 
+}
+  .monogram { 
+    font-size: 70px; 
+}
+  .tag1 { bottom: -30px;  left: 0; font-size: 11px; padding: 6px 12px; }
+  .tag2 { bottom: -30px;  right:0; font-size: 11px; padding: 6px 12px; }
+  .tag3 { bottom: -65px;  left: 0; font-size: 11px; padding: 6px 12px; }
+  .tag4 { bottom: -65px;  right: 0; font-size: 11px; padding: 6px 12px; }
+  .tag5 { bottom: -100px; left: 0; font-size: 11px; padding: 6px 12px; }
+  .tag6 { bottom: -100px; right:0; font-size: 11px; padding: 6px 12px; }
+  .tag7 { bottom: -135px; left: 50%; transform: translateX(-50%); font-size: 11px; padding: 6px 12px; }
 
   .portfolio-header h2 { 
     font-size: 24px; 

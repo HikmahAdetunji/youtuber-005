@@ -240,7 +240,7 @@
  
     <!-- Right: form -->
     <div class="cd-right reveal">
-      <form id="contactForm" class="cd-form" novalidate>
+      <form id="contactForm" class="cd-form" action="https://formspree.io/f/mlgkvgan" method="POST">
  
         <div class="cd-form-row">
           <div class="cd-form-group">
@@ -317,6 +317,13 @@
     </div>
   </div>
 </section>
+<!--Custom Alert-->
+<div class="alert-backdrop" id="alertBackdrop"></div>
+<div class="alert-box" id="customAlert">
+  <h3 id="alertTitle">Uthmaan Adetunji</h3>
+    <p id="alertMessage"></p>
+    <button type="button" onclick="closeAlert()">Ok</button>
+  </div>
 
 <!--Footer-->
 <footer class="footer reveal">

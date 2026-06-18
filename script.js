@@ -213,7 +213,7 @@ const faqItems = document.querySelectorAll('.faq-item');
   const submitBtn = document.getElementById('submitBtn');
 
   if (form && submitBtn) {
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
     const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
     let isValid = true;
@@ -239,17 +239,30 @@ const faqItems = document.querySelectorAll('.faq-item');
       <span class="arrow">→</span>
     `;
     submitBtn.disabled = true;
-    setTimeout(() => {
-      showAlert("Message Sent!", "Thank you for reaching out. Your project inquiry has been received, and I'll respond shortly.");
-      form.reset();
+
+     const formAction = form.getAttribute('action');
+try {
+      const response = await fetch("https://formspree.io/f/mlgkvgan", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      });
+
+if (response.ok) {
+        showAlert("Message Sent!", "Thank you for reaching out. Your project inquiry has been received, and I'll respond shortly.");
+        form.reset();
+      } else {
+        showAlert("Error", "Something went wrong. Please try again.");
+      }
+
+    } catch (error) {
+      showAlert("Error", "Network error. Please check your connection and try again.");
+    }
       submitBtn.classList.remove('sending');
       submitBtn.innerHTML = originalHTML;
       submitBtn.disabled = false;
-    }, 1500);
   });
   }
-
-  
 
   //Data Reveal Animation
   const revealElements = document.querySelectorAll('.reveal');

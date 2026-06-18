@@ -516,10 +516,20 @@ margin:0;
     /*MOBILE*/
 
     @media (max-width:768px){
-   .top-services { padding: 60px 20px 40px; }
-  .services-section { padding: 60px 20px; }
-  .cards-grid { grid-template-columns: 1fr; gap: 16px; }
-  .section-heading { font-size: 1.7rem; margin-bottom: 40px; }
+   .top-services { 
+    padding: 60px 20px 40px; 
+  }
+  .services-section {
+     padding: 60px 20px; 
+    }
+  .cards-grid { 
+    grid-template-columns:1fr; 
+     gap: 16px; 
+    }
+  .section-heading { 
+    font-size: 1.7rem;
+     margin-bottom: 40px; 
+    }
  .service-cta{
     padding:60px 20px;
  }
