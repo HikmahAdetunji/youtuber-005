@@ -1465,7 +1465,7 @@ max-width:1300px;
 /*Data Reveal Animation*/
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(70px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
