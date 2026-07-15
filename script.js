@@ -188,9 +188,8 @@ function scrollToIndex(idx) {
   if (track && prevButton && nextButton) {
     var testimonials = [
       { rating: '5.0', text: 'Great work by this freelancer! Its super easy to communicate with him and his quality of work is 5 star. Will work with him on more projects.', name: 'Gerry Regie', role: 'Youtube Creator, Explainer Channel', initials: 'GR', color: '#b85c38' },
-      { rating: '5.0', text: 'We have worked with multiple writers. None match the strategic depth Uthmaan brings.', name: 'Youtube Creator', role: 'Owner, Documentary Channel', initials: 'YC', color: '#3a5f7d' },
-      { rating: '5.0', text: 'Every script feels intentional. The hooks, pacing, and transitions are on another level.', name: 'Rae Boyce', role: 'Channel Owner, Health Niche', initials: 'RB', color: '#5a3e8c' },
-      { rating: '5.0', text: 'Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.', name: 'Robert Fox', role: 'Director, Creative Studio', initials: 'RF', color: '#2e7d55' }
+      { rating: '5.0', text: 'We have worked with multiple writers. None match the strategic depth Uthmaan brings.', name: 'Rae Boyce', role: 'Owner, Documentary Channel', initials: 'RB', color: '#3a5f7d' },
+      { rating: '5.0', text: 'Was a pleasure working with Adetunji. He is clearly experienced in his field and communication was smooth.', name: 'Ferdinand Torggler', role: 'Channel Owner, Health & FitnessNiche', initials: 'FT', color: '#5a3e8c' },
     ];
 
     var current = 0;
