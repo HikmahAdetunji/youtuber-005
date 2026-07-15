@@ -189,7 +189,7 @@ function scrollToIndex(idx) {
     var testimonials = [
       { rating: '5.0', text: 'Great work by this freelancer! Its super easy to communicate with him and his quality of work is 5 star. Will work with him on more projects.', name: 'Gerry Regie', role: 'Youtube Creator, Explainer Channel', initials: 'GR', color: '#b85c38' },
       { rating: '5.0', text: 'We have worked with multiple writers. None match the strategic depth Uthmaan brings.', name: 'Rae Boyce', role: 'Owner, Documentary Channel', initials: 'RB', color: '#3a5f7d' },
-      { rating: '5.0', text: 'Was a pleasure working with Adetunji. He is clearly experienced in his field and communication was smooth.', name: 'Ferdinand Torggler', role: 'Channel Owner, Health & FitnessNiche', initials: 'FT', color: '#5a3e8c' },
+      { rating: '5.0', text: 'Was a pleasure working with Adetunji. He is clearly experienced in his field and communication was smooth.', name: 'Ferdinand Torggler', role: 'Channel Owner, Health & Fitness Niche', initials: 'FT', color: '#5a3e8c' },
     ];
 
     var current = 0;
