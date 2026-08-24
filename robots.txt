@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uthmaanadetunji.netlify.app/sitemap.xml
